@@ -1,0 +1,21 @@
+<div
+  *ngIf="logEntries$ | async as logEntries"
+  id="blog-container"
+  class="container"
+>
+  <div class="row">
+    <div *ngFor="let entry of logEntries.items" class="col-sm-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">{{ entry.fields.dateCreated }}</h5>
+          <p class="card-text">
+            <!-- {{ entry.fields.exerciseEntry.value }} -->
+          </p>
+          <a [routerLink]="['log', entry.sys.id]" class="btn btn-primary"
+            >View Entry</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

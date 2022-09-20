@@ -1,0 +1,6 @@
+<main *ngIf="logEntry$ | async as logEntry">
+  <pre>
+        {{ logEntry.fields.exerciseEntry.content | json }}
+    </pre
+  >
+</main>
